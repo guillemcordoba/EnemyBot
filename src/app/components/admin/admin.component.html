@@ -1,0 +1,23 @@
+<form #form="ngForm" fxLayout="column" fxLayoutGap="2%" color="primary" style="padding: 16px;">
+  <div *ngFor="let q of questions; let i = index">
+    <div fxLayout="column" class="fill">
+      <div fxLayout="row" fxLayoutGap="10%" fxLayoutAlign="center center">
+        <label>Pregunta {{ i + 1 }}</label>
+        <button mat-raised-button (click)="removeQuestion(i)" color="primary">Treure pregunta</button>
+      </div>
+      <mat-form-field>
+        <textarea matInput placeholder="Pregunta" name="question" color="primary" [(ngModel)]="q.question"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Resposta" name="answer" color="primary" [(ngModel)]="q.answer">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Minuts per respondre" name="timedelay" color="primary" type="number" [(ngModel)]="q.timedelay">
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="10%" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="addQuestion()">Afegir pregunta</button>
+    <button mat-raised-button color="accent" (click)="saveQuestions(form.value)">Guardar</button>
+  </div>
+</form>

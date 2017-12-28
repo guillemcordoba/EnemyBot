@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.fill {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  color: white;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 20px;
+}
+
+body, html, eb-question, eb-end {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

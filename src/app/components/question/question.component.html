@@ -1,0 +1,9 @@
+<div fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+  <label color="primary">{{(currentQuestion$ | async)?.question}}</label>
+
+  <input matInput color="primary" placeholder="Resposta" [(ngModel)]="answer">
+
+  <label>Temps restant: {{remainingTime$ | async | date:'HH:mm:ss'}}</label>
+
+  <button mat-raised-button color="accent" (click)="submitAnswer(answer)">Contesta</button>
+</div>

@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "predeploy": "npm --prefix functions run build"
+  },
+  "hosting": {
+    "public": "dist",
+    "rewrites": [ {
+      "source": "**/!(*.js|*.html|*.css|*.json|*.svg|*.png|*.jpg|*.jpeg)",
+      "destination": "/index.html"
+    } ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
